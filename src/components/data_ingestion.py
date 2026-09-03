@@ -22,7 +22,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion")
         try:
-            df=pd.read_csv('notebook\gemstone.csv')
+            df=pd.read_csv('notebook/new_gemstone.csv')
             logging.info('Read the dataset')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)

@@ -25,7 +25,7 @@ class DataTransformation:
     def get_data_transformation(self):
         try:
 
-            num_columns = ['id','carat','depth','table','x','y','z']
+            num_columns = ['carat','depth','table','x','y','z']
             cat_columns = ['cut','color','clarity']
 
             num_pipeline=Pipeline(

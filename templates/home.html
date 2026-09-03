@@ -1,0 +1,117 @@
+<html>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+<body>
+    <div class="container">
+        <h1>Gemstone Price Prediction </h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <h1><legend>Gemstone Details</legend></h1>
+            <div class="mb-3">
+                <label class="form-label">carat</label>
+                <input type="text" class="form-control" name="carat" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">cut</label>
+                <select class="form-control" name="cut" required>
+                    <option value="Fair">Fair</option>
+                    <option value="Good">Good</option>
+                    <option value="Very Good">Very Good</option>
+                    <option value="Premium">Premium</option>
+                    <option value="Ideal">Ideal</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">color</label>
+                <select class="form-control" name="color" required>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="I">I</option>
+                    <option value="J">J</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">clarity</label>
+                <select class="form-control" name="clarity" required>
+                    <option value="I1">I1</option>
+                    <option value="SI2">SI2</option>
+                    <option value="SI1">SI1</option>
+                    <option value="VS2">VS2</option>
+                    <option value="VS1">VS1</option>
+                    <option value="VVS2">VVS2</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">depth</label>
+                <input type="text" class="form-control" name="depth" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">table</label>
+                <input type="text" class="form-control" name="table" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">x</label>
+                <input type="text" class="form-control" name="length" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">y</label>
+                <input type="text" class="form-control" name="width" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">z</label>
+                <input type="text" class="form-control" name="depth" required>
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Predict">
+        </form>
+        <h2>
+            The predicted price of the gemstone is: {{ prediction }}
+        </h2>
+</body>
+</html>
